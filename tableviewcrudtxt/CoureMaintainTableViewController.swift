@@ -12,24 +12,22 @@ class CoureMaintainTableViewController: UITableViewController {
     var coureSelect:[String:String]!
     var datePicker : UIDatePicker!
     @IBAction func saveButtonAction(_ sender: UIBarButtonItem){
-        
-        
-     let  notificationName = Notification.Name("maintainNotification")
-          saveDate()
+        let  notificationName = Notification.Name("maintainNotification")
+        saveDate()
         NotificationCenter.default.post(
             name: notificationName, object: nil, userInfo: coureSelect)
         
         self.navigationController?.popViewController(animated: true)
-    
+        
     }
     func saveDate()
     {
-        coureSelect = ["name":nameTextField.text!
-            , "startdate":startdateTextField.text!,
-                        "enddate":enddateTextField.text!,"pic":"1",
-                        "description":descriptionTextView.text!,
-                        "weblink":weblinkTextField.text!]
-    
+        coureSelect = ["name":nameTextField.text!,
+                       "startdate":startdateTextField.text!,
+                       "enddate":enddateTextField.text!,"pic":"1",
+                       "description":descriptionTextView.text!,
+                       "weblink":weblinkTextField.text!]
+        
     }
     
     
